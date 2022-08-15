@@ -1,20 +1,76 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 === num2) { 
+     result = "are equal"
+  } else if (num1 > num2) {
+    result = num1
+  } else {
+    result = num2
+  }
+    return result
+}
+
+console.log(maxOfTwoNumbers(2, 6))
 
 
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const wordList = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(wordListFind) {
+  let maxLength = 0;
+  let words = ""
 
+  for (let possibleWord = 0; possibleWord < wordList.length; possibleWord++) {
+    if (wordListFind[possibleWord].length > maxLength) {
+        maxLength = wordListFind[possibleWord].length;
+        words = wordListFind[possibleWord]
+    }
+    
+  }
+  return words
+}
+ console.log(findLongestWord(wordList))
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numbersArray) {
+   let result = 0;
+  
+   for (let i = 0; i < numbersArray.length; i++) {
+      result = result + numbersArray[i]                      
+    }
+  
+   return result
+ }
 
+function sumNumbersT(aNumberArray) {
+  if (!aNumberArray) return null;
+  let sum = 0;
+  for (let pieceOfArray of aNumberArray) {
+    // we are adding "typeof" condition to reuse this function
+    // to calculate sum of letters in the array of words
+
+    // we can check the type of elements in the array:
+    // console.log(`Type of pieceOfArray: ${typeof pieceOfArray}`);
+
+    if (typeof pieceOfArray === "string") sum += pieceOfArray.length;
+    else sum += pieceOfArray;
+  }
+  return sum;
+}
+
+
+
+
+
+
+
+
+console.log(sumNumbersT(numbers));
 
 
 // Iteration #3.1 Bonus:
@@ -26,13 +82,34 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(AVGnumber) {
+  let result = 0;
 
+  result = sumNumbers(AVGnumber) / AVGnumber.length;
+
+  return result
+}
+
+console.log(averageNumbers(numbersAvg))
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsOfArray) {
+  let result = 0
+  let arrayLength = [];
+
+  for (let i =0; i < wordsOfArray.length; i++) {
+    //la lin de abajo se lee como: En la casilla i del arrayLength $quiero que almacenes$ la longitud de la casilla i del wordsOfArray
+    arrayLength[i] = wordsOfArray[i].length 
+  }
+  
+  result = averageNumbers(arrayLength)
+
+  return result
+ }
+
+ console.log(averageWordLength(wordsArr))
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,7 +129,18 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrayOfWords) {
+  result = []
+
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    
+  }
+
+
+
+
+  return result
+}
 
 
 
